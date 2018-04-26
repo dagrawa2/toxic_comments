@@ -1,0 +1,8 @@
+April 26, 2018:
+
+I had trouble cloning this repo; git-lfs gave a smudge error. I found the commands in the following post to help:
+https://stackoverflow.com/questions/46521122/smudge-error-error-downloading
+
+
+this is the original line 33 in model-ft.py:
+	s = re.sub(r'([\;\:\|•«\n])', ' ', s)

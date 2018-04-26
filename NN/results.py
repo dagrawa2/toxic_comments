@@ -1,7 +1,8 @@
 import numpy as np
 from Utils import pickle
 
-labels = pickle.load("Objects/labels.list")
+labels = ["toxic", "severe_toxic", "obscene", "threat", "insult", "identity_hate"]
+#labels = pickle.load("Objects/labels.list")
 results = pickle.load("Objects/results.dict")
 
 epochs = range(1, len(results["train_time"])+1)
@@ -36,7 +37,7 @@ file.write("---\n\n")
 file.write("Most toxic comments for each label:\n\n")
 
 for label, comments in zip(labels, results["top_comments"]):
-	print(label+":\n\n")
+	file.write(label+":\n\n")
 	for i, comment in enumerate(comments):
 		file.write("Comment "+str(i)+":\n")
 		file.write(comment+"\n\n")

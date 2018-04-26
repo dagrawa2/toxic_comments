@@ -32,4 +32,13 @@ for i, label in enumerate(labels):
 	file.write("\n")
 	file.write(label+" ROC_AUC: "+str(np.round(results["roc"][i], 5))+","+str(np.round(results["val_roc"][i], 5))+"\n\n\n")
 
+file.write("---\n\n")
+file.write("Most toxic comments for each label:\n\n")
+
+for label, comments in zip(labels, results["top_comments"]):
+	print(label+":\n\n")
+	for i, comment in enumerate(comments):
+		file.write("Comment "+str(i)+":\n")
+		file.write(comment+"\n\n")
+
 file.close()

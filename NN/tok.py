@@ -8,7 +8,20 @@ num_words = 10000
 data = pd.read_csv("../Data/train.csv")
 comments = data["comment_text"].tolist()
 
-T = Tokenizer(num_words=num_words)
+filters = '"#$%&()*+-/<=>@[\]^_`{|}~    \n'
+keep = '!,.:;?'
+
+def preprocess(comment):
+	comment = re.sub(r"[-\.]\d", r"0", comment)
+	comment = re.sub(r"\d+", r"0", comment)
+	for k in keep:
+		comment = comment.replace(k, " "+k+" ")
+	for a in [".", "Dr", "Mr", "Ms", "Mrs"]:
+		comment = comment.replace(a+" .", a+".")
+
+comments = [preprocess(comment) for comment in comments]
+
+T = Tokenizer(num_words=num_words, filters=filters)
 T.fit_on_texts(comments)
 X_train = T.texts_to_sequences(comments)
 
@@ -22,6 +35,8 @@ np.save("Objects/Y_train.npy", Y_train)
 
 data = pd.read_csv("../Data/test.csv")
 comments = data["comment_text"].tolist()
+
+comments = [preprocess(comment) for comment in comments]
 
 X_test = T.texts_to_sequences(comments)
 

@@ -104,6 +104,18 @@ submission = pd.read_csv("../Data/sample_submission.csv")
 submission.iloc[:,1:] = Y_test
 submission.to_csv("Objects/submission.csv", index=False)
 
+data = pd.read_csv("../Data/test.csv")
+comments = data["comment_text"].tolist()
+
+top_n = 10
+top_comments = []
+for j in range(Y_test.shape[1]):
+	y = Y_test[:,j]
+	inds = np.argpartition(y, -top_n)[-top_n:]
+	inds = inds[np.argsort(y[inds])]
+	top_comments.append([comments[i] for i in inds])
+
+results.update({"top_comments": top_comments)
 results.update({"script_time": time.time()-time_0})
 
 pickle.save("Objects/results.dict", results)

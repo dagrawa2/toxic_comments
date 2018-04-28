@@ -36,7 +36,7 @@ for i, label in enumerate(labels):
 file.write("---\n\n")
 file.write("Most toxic comments for each label:\n\n")
 
-for label, comments in zip(labels, results["top_comments"]):
+for label, comments in zip(labels, results["example_comments"]):
 	file.write(label+":\n\n")
 	for i, comment in enumerate(comments):
 		file.write("Comment "+str(i)+":\n")

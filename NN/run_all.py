@@ -1,6 +1,6 @@
 import os
 
-scripts = ["freqs", "freqs-stats", "tok", "lengths", "lengths-stats", "pad", "shapes", "model", "results"]
+scripts = ["embed", "shapes", "model", "results"]
 
 for script in scripts:
 	print("Running "+script+" .py . . . ")

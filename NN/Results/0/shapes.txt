@@ -1,8 +1,0 @@
-Shapes of Arrays
-
-Vocab size (includes padding token): 10000
-
-X_train.shape: (159571, 220)
-Y_train.shape: (159571, 6)
-
-X_test.shape: (153164, 220)

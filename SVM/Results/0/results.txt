@@ -1,0 +1,27 @@
+Results
+
+Script time: 8.03032 s
+Training time: 3.51705 s
+
+Overall accuracy: 0.99864,0.98138
+Overall ROC_AUC: 0.97988,0.71015
+
+
+toxic accuracy: 0.99779,0.95918
+toxic ROC_AUC: 0.99057,0.81823
+
+severe_toxic accuracy: 0.99891,0.99011
+severe_toxic ROC_AUC: 0.96401,0.6179
+
+obscene accuracy: 0.99847,0.97798
+obscene ROC_AUC: 0.98997,0.82794
+
+threat accuracy: 0.99986,0.99759
+threat ROC_AUC: 0.98007,0.62541
+
+insult accuracy: 0.99744,0.97132
+insult ROC_AUC: 0.98565,0.77251
+
+identity_hate accuracy: 0.99935,0.99209
+identity_hate ROC_AUC: 0.96901,0.5989
+

@@ -1,0 +1,4 @@
+fileName        date                 description  status    publicScore  privateScore  
+--------------  -------------------  -----------  --------  -----------  ------------  
+submission.csv  2018-04-02 03:23:38  SVM          complete  0.7301       0.7191        
+submission.csv  2018-04-02 03:15:39  MTCNN        complete  0.9533       0.9552        

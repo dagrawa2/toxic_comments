@@ -1,0 +1,6 @@
+Shapes of Arrays
+
+X_train.shape: (159571, 200000)
+Y_train.shape: (159571, 6)
+
+X_test.shape: (153164, 200000)

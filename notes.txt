@@ -6,3 +6,22 @@ https://stackoverflow.com/questions/46521122/smudge-error-error-downloading
 
 this is the original line 33 in model-ft.py:
 	s = re.sub(r'([\;\:\|•«\n])', ' ', s)
+
+
+some interesting comments:
+
+toxic:
+Comment 1 (score = 0.6886):
+:Don't mean to be an ass about it, but really, please can we discuss it first?
+
+threat:
+Comment 2 (score = 0.766):
+" 
+
+ ==Explanation== 
+
+ Okay... about a month ago, I received a death threat. Nothing serious, just a random cretin shouting ""You reverted my edit, I'll kill you, faggot!"" with bad spelling. Nothing I haven't seen before. I deleted it and went back to removing more vandalism. A few days later, same thing. And again twice more. That's when I noticed something odd. None of the addresses were real. They were all just random strings of characters and they were all different from each other. I've seen it before, I know you can fake an e-mail address. An old friend once e-mailed me from ""jameskirk@federationhq.co.milkyway."" I've had spam mail from my own address. But I thought it was rather odd that someone was doing it just to send me crap like that when I didn't even know what I did or who it was. Then things got more complex. They started to say things that sounded very fishy and, after the third e-mail like that, I figured it out why I was suspicious. Somehow, they were finding out personal information about me. Forum posts from months ago, little snippets of my life. That's when I started responding. After a few days, I started to worry about how much they knew about me. Then they started to quote some things that even I had forgotten about and promised me that they knew more about me, including where I lived. They gave me a choice: retire from Wikipedia or they'd find me and kill my family. 
+
+ I wasn't willing to take that chance so I retired... 
+
+ That's why I retired. No more. Here and now, I'm stopping this. I know you're reading this, whoever you are, so I'm telling you, in public, to fuck off. I can't believe someone would be pathetic enough go to this length of shit to protect their right to vandalise a fucking encyclopaedia! All of your e-mails were deleted after their arrival. However, the next one you send me won't be. If you ever contact me again, I'll call in every one of the numerous favours I am owed. Fake e-mail address or not, I will track you down. And when I do, you're going to have a nice little chat with the police. If you ever come near me or my friends and family, I'll fucking disembowel you and hang you from a tree. I do not have to put up with this shit, so I won't. If you out me, I'll find you. If you threaten me, I'll find you. If you come near me or someone I love, I'll kill you. Are we clear? If I ever see you again... You failed. I will not retire because someone demands it. I will return later tonight. Anyone else who wants to fuck with me, this was your only warning as well. I will not tolerate this. You fuck with me, I fuck right back.  "

@@ -1,0 +1,17 @@
+Correlations in training set and in test predictions respectively:
+
+toxic, severe_toxic: 0.30862, 0.17653
+toxic, obscene: 0.67651, 0.7414
+toxic, threat: 0.15706, 0.0968
+toxic, insult: 0.64752, 0.64538
+toxic, identity_hate: 0.26601, 0.21465
+severe_toxic, obscene: 0.40301, 0.23699
+severe_toxic, threat: 0.1236, 0.06347
+severe_toxic, insult: 0.37581, 0.27353
+severe_toxic, identity_hate: 0.2016, 0.13227
+obscene, threat: 0.14118, 0.0495
+obscene, insult: 0.74127, 0.70804
+obscene, identity_hate: 0.28687, 0.21399
+threat, insult: 0.15002, 0.06012
+threat, identity_hate: 0.11513, -0.00315
+insult, identity_hate: 0.33774, 0.29345

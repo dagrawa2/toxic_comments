@@ -34,12 +34,21 @@ for i, label in enumerate(labels):
 	file.write(label+" ROC_AUC: "+str(np.round(results["roc"][i], 5))+","+str(np.round(results["val_roc"][i], 5))+"\n\n\n")
 
 file.write("---\n\n")
-file.write("Most toxic comments for each label:\n\n")
+file.write("Example test comments predicted to be toxic for each label:\n\n")
 
-for label, comments in zip(labels, results["example_comments"]):
+for label, comments, scores in zip(labels, results["example_comments"], results["example_comments_scores"]):
 	file.write(label+":\n\n")
-	for i, comment in enumerate(comments):
-		file.write("Comment "+str(i)+":\n")
+	for i, comment, score in zip(range(len(comments)), comments, scores):
+		file.write("Comment "+str(i)+" (score = "+str(np.round(score, 4))+"):\n")
+		file.write(comment+"\n\n")
+
+file.write("\n---\n\n")
+file.write("Example training/validation comments wrongly predicted as toxic for each label:\n\n")
+
+for label, comments, scores in zip(labels, results["wrong_comments"], results["wrong_comments_scores"]):
+	file.write(label+":\n\n")
+	for i, comment, score in zip(range(len(comments)), comments, scores):
+		file.write("Comment "+str(i)+" (score = "+str(np.round(score, 4))+"):\n")
 		file.write(comment+"\n\n")
 
 file.close()

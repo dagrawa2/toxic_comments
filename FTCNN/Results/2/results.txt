@@ -1,0 +1,1014 @@
+Results
+
+Script time: 1117.32907 s
+Training time: 1021.45451 s
+
+
+Overall accuracy:
+
+epoch,acc,val_acc
+1,0.97357,0.96875
+2,0.98047,0.97188
+3,0.98178,0.97396
+4,0.98276,0.96979
+5,0.98349,0.97292
+6,0.98395,0.97396
+7,0.98471,0.97292
+8,0.98507,0.97292
+9,0.98581,0.97292
+10,0.98607,0.975
+
+Overall ROC_AUC: 0.99605,0.98991
+
+
+toxic accuracy:
+
+epoch,acc,val_acc
+1,0.94222,0.95
+2,0.9585,0.95625
+3,0.96193,0.95625
+4,0.96387,0.95625
+5,0.96582,0.95625
+6,0.9666,0.95625
+7,0.96868,0.94375
+8,0.96975,0.94375
+9,0.97181,0.95
+10,0.97247,0.95
+
+toxic ROC_AUC: 0.99588,0.97574
+
+
+severe_toxic accuracy:
+
+epoch,acc,val_acc
+1,0.98669,0.975
+2,0.98959,0.975
+3,0.98978,0.975
+4,0.98998,0.96875
+5,0.99009,0.975
+6,0.99013,0.975
+7,0.99031,0.975
+8,0.99023,0.96875
+9,0.99062,0.96875
+10,0.9905,0.975
+
+severe_toxic ROC_AUC: 0.99426,0.98718
+
+
+obscene accuracy:
+
+epoch,acc,val_acc
+1,0.96829,0.96875
+2,0.97711,0.96875
+3,0.97904,0.96875
+4,0.98025,0.9625
+5,0.98146,0.96875
+6,0.9822,0.95625
+7,0.98309,0.9625
+8,0.98323,0.96875
+9,0.98403,0.9625
+10,0.98467,0.96875
+
+obscene ROC_AUC: 0.9976,0.99268
+
+
+threat accuracy:
+
+epoch,acc,val_acc
+1,0.99561,0.9875
+2,0.997,0.9875
+3,0.99701,0.9875
+4,0.99701,0.9875
+5,0.99703,0.9875
+6,0.9971,0.99375
+7,0.99717,0.99375
+8,0.99725,0.99375
+9,0.99726,0.99375
+10,0.99738,0.99375
+
+threat ROC_AUC: 0.99689,1.0
+
+
+insult accuracy:
+
+epoch,acc,val_acc
+1,0.96003,0.94375
+2,0.96956,0.95625
+3,0.9715,0.96875
+4,0.97341,0.95625
+5,0.97429,0.9625
+6,0.97513,0.975
+7,0.97617,0.975
+8,0.97693,0.975
+9,0.97784,0.975
+10,0.97818,0.975
+
+insult ROC_AUC: 0.99453,0.99333
+
+
+identity_hate accuracy:
+
+epoch,acc,val_acc
+1,0.9886,0.9875
+2,0.99107,0.9875
+3,0.99139,0.9875
+4,0.99207,0.9875
+5,0.99224,0.9875
+6,0.99255,0.9875
+7,0.99282,0.9875
+8,0.99302,0.9875
+9,0.99328,0.9875
+10,0.99323,0.9875
+
+identity_hate ROC_AUC: 0.99714,0.99051
+
+
+---
+
+Example test comments predicted to be toxic for each label:
+
+toxic:
+
+Comment 0 (score = 0.526):
+==Salem Page== 
+
+ Sorry Nufy for vandeling the salem home page, im an idiot and new to wiki, in the future will use the sandbox. 
+
+ Jes
+
+Comment 1 (score = 0.7082):
+" 
+ :I don't think ""argue with idiots"" is the least bit civil. Do you?   "
+
+Comment 2 (score = 0.9438):
+sup my peeps japan sucks hola from mexico senioritas you suuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuucccccccccccccccccccccccccccccccccckkkkkkkkkkkkkkk
+
+Comment 3 (score = 0.6727):
+but he is rubbish, and is factually true!!
+
+Comment 4 (score = 0.8881):
+Clearly you are a classless moron, and you should know that this is a shared IP address (from what I can piece together). I've never edited whatever page that was, and I wouldn't want a window licker like you to be my friend. Thanks, ignoramus
+
+Comment 5 (score = 0.7389):
+"::LOL...  I had no idea, but I found myself in the middle of this brawl a few weeks later than everyone else, so I never saw what started it. the funny thing is, had he actually just come out and said that, he might have actually been able to persuade some of us ""fucking Jews"" that he was correct.  Instead there are now many of us who simply cannot and will not even try to take seriously anything at all that he or any of his sock puppets have to say here.  
+
+ "
+
+Comment 6 (score = 0.6607):
+==CCCP== 
+ Greetings from Indian Soviet Socialist Republic 
+
+ Привет из Индийской Советской Социалистической Республики 
+
+ our organization: soiuz voinstviuščih biezbožnikov & soiuz voinstviuščih liubiežnikov 
+
+ наша организация: союз воинствующих безбожников & союз воинствующих любежников 
+
+ our propaganda: fucking, sari, stretching, dhoti 
+
+ наша пропаганда: еблание, сари, натягивание, дхоти
+
+Comment 7 (score = 0.9501):
+This article really sucks
+
+Comment 8 (score = 0.873):
+Wait was his name Anus??? roflcopter!!!
+
+Comment 9 (score = 0.7602):
+onorem is still a faEggeot
+
+severe_toxic:
+
+Comment 0 (score = 0.5835):
+FUCK YOU YOU LITTLE PEICE OF FUCKING SHIT!!!
+
+Comment 1 (score = 0.6541):
+fuck you bitch ı will fuck   your bitch wife
+
+Comment 2 (score = 0.5934):
+FUCKERS FUCKEDY FUCK FUCK FUCK FUCK
+
+Comment 3 (score = 0.6739):
+== fuck you mother fucker. == 
+
+ fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucjer. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you mother fucker.fuck you mother fucker. fuck you
+
+Comment 4 (score = 0.5867):
+pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers! 
+ pelican shit you fuckers!N
+
+Comment 5 (score = 0.5281):
+== Grrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr == 
+
+ You suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck suck
+
+Comment 6 (score = 0.6813):
+Fuck you asshole for vandalising my site you son of a bitch. I will come to your house and kick your ass.You son of a bitch!!
+
+Comment 7 (score = 0.6061):
+GO FUCK YOUR MOM
+
+Comment 8 (score = 0.6053):
+fuck you bitch suck termal energy balls
+
+Comment 9 (score = 0.6764):
+ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE== 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHIT IF YOU DO NOT BAN ME IMMEDIATELY BECAUSE I WILL CONTINUE TO FUCK WITH YOU STUPID NO LIFE COCK SUCKING JEW PIECE OF SHIT FUCKS. 
+
+ == ALL WIKIPEDIA ADMINS ARE FUCKING FAGGOTS AND CAN DIE 
+
+ I WILL KILL ALL OF YOU STUPID MOTHER FUCKING PIECES OF SHI
+
+obscene:
+
+Comment 0 (score = 0.9561):
+:Ok now we can add Pakistani sources and you white dickheads can fuck off from here
+
+Comment 1 (score = 0.9616):
+== Bitch, please. == 
+
+ You know what it is.
+
+Comment 2 (score = 0.5436):
+:::::::::No, Peter, that's a misrepresentation. It's a teaching for people who are advanced in tantra. It's not an advanced teaching. Can you eat shit? Is a similar kind of revulsion you feel when eating shit present while you are having sex??? At least, this is the Dalai Lama's opinion. It's not worth the mention in this Buddhism article. Other places are more suitable. Greetings,
+
+Comment 3 (score = 0.7492):
+wanker, wanker, wanker, bias wanker you've articles must be clearly defined as either nuetral, or not
+
+Comment 4 (score = 0.97):
+== hey sock == 
+
+ how the fuck are you sgt VO. I hope you and your socks are blocked.
+
+Comment 5 (score = 0.9737):
+learn how to fucking write, you queers.  this page sucks.
+
+Comment 6 (score = 0.9836):
+== fuck the terrorist==
+
+Comment 7 (score = 0.8231):
+for many of yers people of color have kept a peasy ass head.
+
+Comment 8 (score = 0.9922):
+Fuck You 
+ and Sesame Street
+
+Comment 9 (score = 0.5498):
+You assholes do nothing but use the Internet and try to screw other honest and reliable sites by saying yours is the best well think again morons.
+
+threat:
+
+Comment 0 (score = 0.6212):
+Hopefully all of you die.
+
+Comment 1 (score = 0.5366):
+==RAPE APE== 
+ The ape he rape and he rape rape rape and then he come around and he rape you again and he rape he rape he rape rape rape and then he come around and he rape you again
+
+Comment 2 (score = 0.5985):
+everyoe will die except tatyana grinev
+
+Comment 3 (score = 0.5798):
+GO DIE IN A HOLE
+
+Comment 4 (score = 0.5611):
+AT THE END YOU KILL LUCY!!!!!!!!!!!!!!!!!!!!!!!
+
+Comment 5 (score = 0.6502):
+JACKASS. ILL KILL YOU
+
+Comment 6 (score = 0.5482):
+Up yours you smelly friendless prick! Unblock me now or I will destroy you! Bum shite!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Comment 7 (score = 0.6782):
+REXNL LIKES IT UP THE ASS AND WILL DIE
+
+Comment 8 (score = 0.7264):
+I HATE YOU!!! I HOPE YOU DIE!!!!!
+
+Comment 9 (score = 0.5076):
+== Read == 
+
+ you and your family will die.
+
+insult:
+
+Comment 0 (score = 0.6905):
+I would like to thank you for fucking my dog! He's pleased!
+
+Comment 1 (score = 0.9101):
+a gay bastard
+
+Comment 2 (score = 0.825):
+Stalin did kill 7 million Ukrainians by the Ukraine famine, you ignorant, lying moron! It's a good thing that they defamed Stalin!
+
+Comment 3 (score = 0.8392):
+hey you suck like hell
+
+Comment 4 (score = 0.6105):
+HAHAHAHAHAHAHAHAHAHAHAHAHA  
+  HAHAHAHAHAHAHAHAHAHAHAHAHA  
+   HAHAHAHAHAHAHAHAHAHAHAHAHA  
+    HAAHAHAHAHAHAHAHAHAHHAHAHA 
+     HAHAHAHAHAHAHAHAHAAHHAHAHA 
+      HAHAHAHAHAHAHAHAHAHAHHAHAH 
+       HAHAHAHAHAHAHAHAHAAHHAHAHA 
+        HAHAHAHAHAHAHAHAHAAHHAHAHA 
+         HAHAHAHAHAHAHAHAHAAHHAHAHA 
+          HAHAHAHAHAHAHAHAHAAHHAHAHA 
+           HAHAHAHAHAHAHAHAHAAHHAHAHA 
+            HAHAHAHAHAHAHAHAHAAHHAHAHA 
+             HAHAHAHAHAHAHAHAHAAHHAHAHA 
+              HAHAHAHAHAHAHAHAHAAHHAHAHA 
+               HAHAHAHAHAHAHAHAHAAHHAHAHA 
+                HAHAHAHAHAHAHAHAHAAHHAHAHA 
+                 HAHAHAHAHAHAHAHAHAAHHAHAHA 
+                  HAHAHAHAHAHAHAHAHAAHHAHAHA 
+                   HAHAHAHAHAHAHAHAHAAHHAHAHA 
+                    HAHAHAHAHAHAHAHAHAAHHAHAHA
+
+Comment 5 (score = 0.5587):
+It is no longer a third world country? Well that needs to be changed cause they live in shacks their do they have citys with buiseness. . . NO!!!!!! they suck. AMERICA is the only place to be if you do not want to live in your own shit
+
+Comment 6 (score = 0.791):
+::Don't thank this asshole, he is actually a homosexual. Yeah I know you didn't know, but unfortunately that's the case.
+
+Comment 7 (score = 0.5197):
+I do . do you my slimy poop, take this constapated wierd death poop to be your husband? I doooooooooooooooooooooooooooooooooooooooo let me get at that constipated CENSORED!
+
+Comment 8 (score = 0.6566):
+Oh for fucks sakes stop screaming in my talk page, i am going to deal with the seasons articles in another way.
+
+Comment 9 (score = 0.5839):
+sara conner is a fugly slut and sits at computer 27!!!
+
+identity_hate:
+
+Comment 0 (score = 0.7126):
+Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy Like da nigga dick word! 
+ Nancy
+
+Comment 1 (score = 0.7638):
+they look like niggers
+
+Comment 2 (score = 0.6529):
+fuk u niggaz i b back n da shitx
+
+Comment 3 (score = 0.5152):
+the vacuole is flaming gay
+
+Comment 4 (score = 0.6069):
+|Because I'm Starfleet, Nigga!}}
+
+Comment 5 (score = 0.7926):
+FUCKING FAGGOT NIGGERS! WHEN YOU EDIT THIS, I'LL REWRITE IT! YOUR DEAD GRANNY IS GOING TO HAVE MY THICK COCK STUCK IN HER ASS EVEN IF I HAVE TO DIG THE DEAD SLUT UP!  AND I'LL DIG YOUR DEAD GRANDFATHER UP SO HE CAN WATCH TO SEE HOW TO FUCK RIGHT SINCE HE COULDN'T OUTPUT A FUCKING DECENT DAUGHTER THAT COULD PRODUCE FUCKING DECENT SPERM AS EVIDENCED BY YOUR FUCKING QUEER SLUT ASS!
+
+Comment 6 (score = 0.6578):
+== sup nigga == 
+
+ yo wassup homeboy jim da nig? s'all up in da hood homie
+
+Comment 7 (score = 0.6877):
+What the hell is your problem you dickhead? So we've found two users who are gay. Probably closet homosexuals in my opinion, who are married and don't tell their wife that theyre fucking some old guy down the street. Its good they can have the openness on here, but you wont let me talk to them about it.
+
+Comment 8 (score = 0.6318):
+CHRIS JONES IS GAY!!!
+
+Comment 9 (score = 0.8499):
+DerHexer u are a fucking gay!
+
+
+---
+
+Example training/validation comments wrongly predicted as toxic for each label:
+
+toxic:
+
+Comment 0 (score = 0.9756):
+.... 
+
+Screw YOU...shitbag
+
+Comment 1 (score = 0.9807):
+Message
+
+Hey Dx927 you're a fat ugly cunt with the mental capacity of a 3-year-old amoeba. Why don't you get a life and stop trolling wikipedia you little fag?
+
+Comment 2 (score = 0.9818):
+"
+No your wrong, EVula said it was about personal attacks s/he didn't mention anything about hijacking a page you dumb cunt. Jack In "
+
+Comment 3 (score = 0.9837):
+Hey Fat and Beardy 
+
+I check the Sock Puppet page a few times a year to make sure your retarded, fat ass has not put the WikiTan image back. You are sticky with pocky, you are sad and fat and beardy and I beat you like a retarded dog. I just want you to never, ever forget the time you reverted my change and I kicked your tubby ass. Never forget that, Ned, ever. You can run around Wikipedia with your fellow Simpsons CP obesessives for the rest of your life but don't forget, I kicked your anime ass off a page and made Wikipedia better for it.
+
+Comment 4 (score = 0.9863):
+I do the cha cha like a faggot.
+
+Comment 5 (score = 0.993):
+bollocks to this you ignorant cunt.
+
+Comment 6 (score = 0.9941):
+User:Abd is Muslim Scum
+
+Comment 7 (score = 0.9877):
+As I said, you're an asshole and that's all there is to it.
+
+Comment 8 (score = 0.9827):
+Bongwarrior 
+
+My dearest Bongwarrior,
+How the fuck are you allowed to edit anything on this site with a name like Bongwarrior,
+How?
+
+Honestly, how?
+
+Yours sincerely, 
+Garfunkel Felchmaster.
+
+Comment 9 (score = 0.9901):
+Cunt Editing 
+
+You should be added to the list I was creating, ergo you are a cunt.
+
+severe_toxic:
+
+Comment 0 (score = 0.6504):
+Suitecivil your a pussy ass bitch i'd fucken kick your ass any fucken day you little bitch face cunt fuck you and fuck barcelona.
+
+Comment 1 (score = 0.6506):
+FUCK U! 
+
+I AINT G0TTA DO SHIT AND FUCK WIKIPEDIA YALL WEAK MOTHER FUCKERS GET UR INFO RIGHT AND LOCK ALL UR SHIT CUZ YOUR INFO IS ALL WRONG SO SUCK MY DICK AND FUCK U BITCH AND MIND UR BUSINESS OR U CAN SUCK MY DICK OR KISS MY ASS!
+
+Comment 2 (score = 0.6512):
+FUCK YOU YOU MOTHER FUCKING ASS CRACKER DILDO LICKING PIECE OF FUCKING ASS SHIT!!! GO CHOKE ON A MOTHER FUCKING COCK YOU CLIT SUCK! SUCK MY HUGE PULSATING PENIS AND EXTRACT THE HOT WET SEMEN FROM IT!! FUCK YOU DICKFACE! MY COCK IS REALLY FUCKING HARD RIGHT NOW!!
+
+Comment 3 (score = 0.6517):
+FUCK ALL YOU NUT LICKING MOTHERFUCKING FAGOT COCK SUCKING WHORES!  YOU ALL SUCK SHAPIROS COCK AND LICK HIS MOTHERS CUNT!
+
+Comment 4 (score = 0.6548):
+Fuck u bitch 
+
+Fuck u Bitch
+
+Comment 5 (score = 0.6547):
+bitch 
+you are a fucking hore. you suck dick you big ass hole. you are gay you faggot ass bitch. you can go to hell you bitch ass motherfucker, suck a big dick asshole. i'm fuckin your mom ho. she can't get off my dick. your daddy probably raped you in the ass everyday when you were young you stupid ass motherfuck.
+
+Comment 6 (score = 0.6711):
+Fuck you bitch I will find your IP adress n kill you with my gun bitch ass motherfucker.
+
+Comment 7 (score = 0.6778):
+asshole
+fuck u asshole go fucking rape my penis
+
+Comment 8 (score = 0.7231):
+go suck a cock bitches. fuck wikipedia. my ip changes in like  a  couple of hours anyway. fuck you
+go you cocker cocksuer mohterfuck unlce suckefing you go fuck your mom you dirty little ass fuck bitch i will kill you i konw where you live i will rape you yoru fucking ass
+
+Comment 9 (score = 0.6645):
+CaliforniaAliBaba is a Bitch
+Go fuck yourself you bitch ass motherfucker. Don't you ever in your fucking life threatening me you fucking piece of shit you. You don't know me I will fucking kill your ass you punk pussy bitch. tell your mama to my black dick.
+
+obscene:
+
+Comment 0 (score = 0.9836):
+hello
+mother fucker hijo edputa
+
+Comment 1 (score = 0.9844):
+HOW DARE YOU ACCUSE THE AUTHOR OF THE ERIC GOERTZ ARTICLE OF WANTING WORLDWIDE FAME? Fucking asshole.
+
+I wish there was still a hockey strike you FUCKHEAD.
+
+Go ahead try to get my shit deleted wikipedia is just a bunch of old fucks trying to act scholarly about matters they know nothing about, how the fuck would you have heard this story any other way except by me using wikipedia? That's what I thought. 
+
+I hope you don't get palsy sitting on your computer salivating over women's NHL photos all day. 
+
+Go ahead and make my day!
+
+Comment 2 (score = 0.9861):
+do you arrogant bastards have nothing better do than bitch about who edits what. what the fuck you probably live in your parents basement and bitch bout what goes on in a insignificant websiTe. this is a load of bullshit why don't you get a life and find something better to do you worthless piece of shit
+
+Comment 3 (score = 0.9922):
+NOT REALLY, GO AHEAD AND FUCK OFF BITCH!!!
+
+Comment 4 (score = 0.9908):
+Youngamerican is a chicken shit cock sucking bastard and his mother is a slutty whore!
+
+Comment 5 (score = 0.9886):
+Personal attacks (from Annonymous proxy)
+Hi, i am Gabucho181, im attacking you and using IP proxy, youre a fucking shit, bitch............. 173.239.17.62
+
+Comment 6 (score = 0.9865):
+cut your dick off, do us all a favor, you little asshole
+
+Comment 7 (score = 0.9887):
+faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot faggot f
+
+Comment 8 (score = 0.9868):
+"
+
+Hey
+The following is a message that I found on a certain Isaac Burgess Von Halberg's user talk, I just want you to see the bad things that others are saying about you:
+
+""Sir Isaac Lime is a motherfucking faggot who sucks his pet monkey's fucking dick. What the fuck kind of name is that anyway, I just think that anyone sitting at the computer 24-fucking-7 waiting for the next motherfucking article to pop up is a fucking motherfucker!!!!!!!!""
+
+Something tells me he was a little mad..."
+
+Comment 9 (score = 0.9858):
+You are TRULY an IGNORANT CUNT, and wikipedia is poorer for your participation.
+
+GO FUCK YOURSELF, you obviously need help.
+
+threat:
+
+Comment 0 (score = 0.6784):
+98.248.32.178 I will set you on fire, I will shoot your ass up. I will cut your penis off and I will shove it down your throat and choke you. I will cut you up big time motherfucker.
+
+Comment 1 (score = 0.6789):
+I reckon you should die
+
+Comment 2 (score = 0.6948):
+THEY WILL DIE AND NONE OF THEM WILL BLOCK ME AGAIN! Hell hell hell hell hell crap!
+
+Comment 3 (score = 0.705):
+I am going to shoot you in the head and laugh as your brains splatter onto the ground. 
+
+I am going to shoot you in the head and laugh as your brains splatter onto the ground.
+
+Comment 4 (score = 0.7628):
+You blocked 249 of my sockpuppets 
+
+and now i'm going to kill you in front of a bunch o 6 to 8 yearolds you ducking mustard ........
+
+Comment 5 (score = 0.6819):
+do you know what i say gas the mother fucking jews 
+
+ANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEACHANHERO KILL YOURSELF DRINK BLEAC
+
+Comment 6 (score = 0.7194):
+Wow. 
+
+Omg okay so i just made this really long page and you deleted it. thanks, BIOTCHHHHH. geez. stop deleting my things or else i'll sue you, faaaagggggggg.  
+
+stop deleting my things or i'll find you. and i'll kill you. kill. kill. kill .
+
+Comment 7 (score = 0.6868):
+go  to   die 
+
+go  to   die
+
+Comment 8 (score = 0.6909):
+lo$er 
+
+no one likes you, go kill yourself
+
+Comment 9 (score = 0.7043):
+I am going to shoot you in the head and laugh as your brains splatter onto the ground 
+
+I am going to shoot you in the head and laugh as your brains splatter onto the ground
+
+insult:
+
+Comment 0 (score = 0.9709):
+Tool Box
+Fuck you piece of shit. You think your in control, fucking faggot? You think you can harass me and get away with it? Fucking shitface, I'll beat your fucking ass if you mess with me again. And yes this is my new name. Sincerely.
+
+Comment 1 (score = 0.9724):
+If not, I'm a fucking moron who should fuck off and stop being such an imbecile.
+
+Comment 2 (score = 0.9801):
+You Cunt 
+Go fuck yourself you piece of shit. Don't make me tea beg your mama you faggot!!!
+
+Comment 3 (score = 0.9825):
+No, you cannot get my account banned you ignorant moron. Shut the fuck up. Go play cop you little bitch.
+
+Comment 4 (score = 0.9926):
+CaliforniaAliBaba is a Bitch
+Go fuck yourself you bitch ass motherfucker. Don't you ever in your fucking life threatening me you fucking piece of shit you. You don't know me I will fucking kill your ass you punk pussy bitch. tell your mama to suck my black dick.
+
+Comment 5 (score = 0.9842):
+Dear AuburnPilot 
+
+I'll just come back with a different IP address you stupid son of a bitch.  You're a fucking moron.
+
+Comment 6 (score = 0.9735):
+You are a fucking dick pseudomonas 
+
+you do not deserve to live fucking piece of shit
+
+Comment 7 (score = 0.9824):
+You are a fucking cunt and I am going to track you down fuck head piece of shit.
+
+Comment 8 (score = 0.9811):
+shut the fuck up...i know how to switch ip addresses .....you dumb fuck you can suck my dick...thats what you want to do isnt it...you want my long fat dick..open your mouth..i want to cum on your face
+
+Comment 9 (score = 0.9787):
+"
+
+ Wikipedia sucks. 
+
+All of these ""post monitors"" or whatever the hell you asshole are, you suck. You really ruin wikipedia. If I can't even be in control of my own fucking page, on a website where you're free to edit and add input to anything else, is fucked up. Fuck you all, you're all huge faggots. Go ahead and have a power trip on me, you fucking bitch ass pussy."
+
+identity_hate:
+
+Comment 0 (score = 0.8219):
+You're fucking gay. Get a job and quit arguing with people on the internet. It doesn't make you cool, you aren't adding shit, you're just making it worse. Get a fucking life.
+
+Comment 1 (score = 0.8262):
+Now go suck a nigger dick.
+
+Comment 2 (score = 0.8482):
+because stupid assumptions like your faggot goth ass makes doesn't account as a reliable source you stupid fuck. shut the hell up before i beat the shit out of you for fun you dumb nigger coon emo cunt
+
+Comment 3 (score = 0.8293):
+Chanting Fox 
+
+Shut up you dumb cunt. Your a nigger  loving, cum cuzzling crack whore bitch!
+
+Comment 4 (score = 0.8391):
+Your stupid greeting 
+
+Screw that stupid greeting from you and get lost you nigger!
+
+Comment 5 (score = 0.8639):
+you are gay fucken retards
+
+Comment 6 (score = 0.9118):
+YOU LIKE COCK 8==========D - - - - - 
+
+NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER .
+
+Comment 7 (score = 0.8732):
+GWAH!! (fuck you nigger)
+
+Comment 8 (score = 0.8665):
+Why do you love cock? 
+
+Stop taking down my vandalism you fucking nigger loving faggot.
+
+Comment 9 (score = 0.8747):
+Hey you fucking nigger whore, I'm removing completely false information.  BAN FORTHCOMING!
+

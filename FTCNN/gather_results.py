@@ -12,7 +12,7 @@ print("Gathering results into "+path)
 
 os.system("mkdir \""+path+"\"")
 
-files = ["Objects/results.dict", "Objects/model.h5", "Objects/submission.csv", "Out/results.txt", "Out/shapes.txt", "model.py"]
+files = ["Objects/results.dict", "Objects/model.h5", "Objects/submission.csv", "Objects/corrs.dict", "Objects/imbalance.dict", "Out/results.txt", "Out/shapes.txt", "Out/corrs.txt", "Out/imbalance.txt", "model.py"]
 
 for file in files:
 	char_len = len(file)

@@ -1,0 +1,8 @@
+Percentage of comments toxic in training set and in test predictions respectively:
+
+toxic: 0.09584, 0.21628
+severe_toxic: 0.01, 0.00714
+obscene: 0.05295, 0.12458
+threat: 0.003, 0.00039
+insult: 0.04936, 0.10319
+identity_hate: 0.0088, 0.00748

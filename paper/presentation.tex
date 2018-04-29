@@ -1,0 +1,198 @@
+\documentclass{beamer}
+\usepackage{amsmath, amsfonts, amssymb}
+%\usepackage{graphicx}
+%\usepackage{pgfplots, pgfplotstable}
+\mode<presentation>
+{\usetheme{boxes}}
+\setbeamertemplate{frametitle}[default][center] 
+
+\usepackage{lmodern, exscale}
+
+%\newcommand{\RR}{\mathbb{R}}
+%\newcommand{\eps}{\epsilon}
+%\newcommand{\lmat}{\begin{bmatrix}}
+%\newcommand{\rmat}{\end{bmatrix}}
+%\newcommand{\argmin}{\operatorname{argmin}}
+%\newcommand{\fnn}{f_{\mbox{NN}}}
+%\newcommand{\tilw}{\tilde{w}}
+%\newcommand{\tilW}{\tilde{W}}
+
+\title{Toxic Comment Classification with Deep Learning}
+\author{Devanshu Agrawal}
+\date{May 3, 2018}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{The Data and Problem}
+\begin{itemize}
+\item Kaggle competition.
+\item Data comprises 159571 comments from Wikipedia's talk page edits.
+\item Each comment tagged with six binary class labels: toxic, severe\_toxic, obscene, threat, insult, and identity\_hate.
+\item Challenge: Build a classifier that predicts the six labels for any given test input.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Word Representations}
+\begin{itemize}
+\item Need numeric representation for words.
+\item One-hot encoding; e.g.,
+\begin{itemize}
+\item $\mbox{Vocabulary} = \{\mbox{``apple''}, \mbox{``berries''}, \mbox{``cat''}, \mbox{``dog''}\}$.
+\item $\mbox{``cat''} = [0, 0, 1, 0]$.
+\end{itemize}
+\item Words are represented as independent, orthonormal vectors.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Word Embeddings}
+\begin{itemize}
+\item Want to capture semantics in representations.
+\item If $V$ is vocabulary, then want embedding $f:V\mapsto \mathbb{R}^d$ with $d \ll |V|$ with similar words embedded near one another.
+\item Most popular approach: word2vec.
+\item This is responsible for surge of deep learning in NLP.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Skip-gram variant of word2vec}
+\begin{itemize}
+\item Generate data set of words and associated contexts from corpus.
+\begin{itemize}
+\item Comment = ``the cat yawned and fell asleep''
+\item word = ``yawned''.
+\item context = $\{$``the'', ``cat'', ``and'', ``fell''$\}$.
+\end{itemize}
+\item Train an NN to predict context given word.
+\item Words with similar contexts will have similar latent representations in hidden layer.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pretrained Word Embeddings}
+\begin{itemize}
+\item word2vec from scratch can be slow.
+\item Alternatives:
+\begin{itemize}
+\item Train embedding layer together with classifier.
+\item Use pretrained embeddings.
+\end{itemize}
+\item Facebook Research offers fastText library of pretrained word embeddings.
+\begin{itemize}
+\item I used the one pretrained on Wikipedia encyclopedia pages.
+\end{itemize}
+\item Used as a look-up table.
+\item fastText is trained on subwords and so is more robust to out-of-vocabulary words and typos.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Results Overall}
+\begin{itemize}
+\item 50/50 training-validation split.
+\item Each score is the ROC AUC score averaged over all six tasks.
+\end{itemize}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|} \hline
+\quad & Training & Validation & Public Test & Private Test \\ \hline
+SVM & 0.97988 & 0.71015 & 0.7301 & 0.7191 \\
+CNN & 0.97528 & 0.96808 & 0.9533 & 0.9552 \\
+FTCNN & 0.9956 & 0.98512 & 0.9779 & 0.9787 \\ \hline
+FTCNN (no val set) & 0.99605 & 0.98991 & 0.9817 & 0.9809 \\
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Results for FTCNN by Task}
+\begin{center}
+\includegraphics[width=3in]{Plots/bar.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Sample Size of each Label}
+\begin{center}
+\includegraphics[width=3in]{Plots/imbalance.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Correlations between Labels}
+\begin{center}
+\begin{tabular}{|c|c|c|c|} \hline
+Task 1 & Task 2 & Corr. on Train & Corr. on Test (preds) \\ \hline
+toxic & obscene & 0.67651 & 0.71734 \\
+toxic & insult & 0.64752 & 0.64572 \\
+obscene & insult & 0.74127 & 0.75453 \\
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Correlations between Labels (cont.)}
+\begin{center}
+\begin{tabular}{|c|c|c|c|} \hline
+Task 1 & Task 2 & Corr. on Train & Corr. on Test (preds) \\ \hline
+toxic & sev toxic & 0.30862 & 0.16146 \\
+toxic & threat & 0.15706 & 0.03768 \\
+toxic & id hate & 0.26601 & 0.16521 \\
+sev toxic & obscene & 0.40301 & 0.22484 \\
+sev toxic & threat & 0.1236 & 0.00224 \\
+sev toxic & insult & 0.37581 & 0.25005 \\
+sev toxic & id hate & 0.2016 & 0.06824 \\
+obscene & threat & 0.14118 & 0.01251 \\
+obscene & id hate & 0.28687 & 0.16625 \\
+threat & insult & 0.15002 & 0.02257 \\
+threat & id hate & 0.11513 & -0.00172 \\
+insult & id hate & 0.33774 & 0.23318 \\
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Improving Performance for the ``toxic'' Task}
+\begin{itemize}
+\item For future work.
+\item Assumption: Comment is ``toxic'' if and only if it is at least one of ``severe\_toxic'', ``obscene'', ``insult'', ``threat'', or ``identity\_hat''.
+\begin{itemize}
+\item i.e., the latter five cover all forms of toxicity.
+\end{itemize}
+\item Incorporate this constraint during training through a regularization term.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Misclassified Comments}
+\begin{itemize}
+\item ``:Don't mean to be an ass about it, but really, please can we discuss it first?'' (predicted as ``toxic'').
+\item ``potatoes will kill you!!!!!!! watch out!!!!!!!!!!!!'' (predicted as ``threat'').
+\item ``lo\$er \slash no one likes you, go kill yourself'' (predicted as ``threat'').
+\item Some comments directed toxicity reflexively. Others quoted toxic comments.
+\item I thought some comments were mislabled as nontoxic.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusions}
+\begin{itemize}
+\item CNN with pretrained fastText embeddings is promising for toxic comment classification.
+\item Room for improvement:
+\begin{itemize}
+\item Take better advantage of correlations between tasks.
+\item Determine positive/negative context for toxic words.
+\item Try other architectures such as recurrent neural networks.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\end{document}

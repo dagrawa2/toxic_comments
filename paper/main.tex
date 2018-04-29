@@ -1,0 +1,219 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% Document starts
+\begin{document}
+
+% Title portion. Note the short title for running heads
+\title[Toxic Comment Classification]{Toxic Comment Classification with Deep Learning}
+
+\author{Devanshu Agrawal}
+
+\begin{abstract}
+Toxicity (e.g., rudeness, obscenity, hate, etc) can hinder healthy and productive online conversation and discussion. The application of machine learning for the automated classification of online toxic comments is a promising solution to this problem-- but there is still significant room for improvement. Recently, Kaggle hosted the ``Toxic comment classification challenge'', in which contestants were given a data set of comments from Wikipedia's talk pages and were asked to build a classifier that predicts whether a test comment has each of six labels of toxicity including ``severely toxic'', ``obscene'', ``threatening'', etc. In this report, we describe the methods we used and the results we obtained in this challenge. We found that a convolutional neural network (CNN) with pretrained word embeddings using fastText pgave the best performance and generalization to the test set. We were unable to reproduce the highest score obtained in this challenge by another contestant. At the end of the report, we discuss various features of comments that could have led our model to misclassify them.
+\end{abstract}
+
+\maketitle
+
+
+\section{Introduction}
+
+The aim of platforms that offer online conversation and discussion is to facilitate an efficient and constructive  exchange of ideas and information. But toxic comments (e.g., rudeness, insults, and in general any language that would alienate users from the conversation) often hinders healthy discussion and free expression. Toxicity is indeed becoming a growing concern for many online communities.
+
+It follows that there is a great amount of interest in the research and development of powerful and robust methods for the automated detection of toxic comments online. Conversation AI -- a research initiative of Jigsaw and Google -- has placed great effort at this front and has developed tools for toxic comment detection. But there is considerable room for improvement. To this end, Jigsaw has teamed up with Kaggle to host the ``Toxic comment classification challenge'' with the aim to allow contestants to develop there own approaches to the problem \cite{kaggle}.
+
+Participants of the challenge are provided with a data set of comments from Wikipedia's talk page edits. Each comment has been tagged with six binary labels that indicate whether the comment contains each of the following types of toxicity respectively: toxic, severely toxic, obscene, threat, insult, and identity-hate. The challenge is to build a model that is able to predict whether a newly observed comment contains each of these six types of toxicity \cite{kaggle}.
+
+In this paper, we report on our own experience with the Toxic comment classification challenge. We understood the problem as a multilabel text classification problem. We took two approaches: Our first approach was to apply a linear support vector machine on a term-frequency-inverse-document-frequency representation of the data; this method served as our baseline. Our second -- and main -- approach was the application of deep learning and in particular convolutional neural networks. Our goal was to improve on the highest score (area under the receiver operating characteristic) on the Kaggle private leaderboards ($0.9885$). We managed a score of only $98.09\%$ but found the experience insightful for future pursuits.
+
+In Section 2, we discuss relevant background information and related works. In Section 3, we describe our methodology in detail. In Section 4, we present our results. Finally, in Sections 5 and 6, we discuss our findings and outline possible avenues for future work.
+
+
+\section{Background and Related Works}
+
+We understand the toxic comment classification challenge to be a multilable text classification problem. Thus, we briefly discuss some background on the application of machine learning methods to natural language processing (NLP). For this, we follow the review given in \cite{young2017recent}.
+
+The application of many common machine learning algorithms to text first requires a numeric representation of the text data. A popular approach has been to build a ``term frequency inverse document frequency'' (TFIDF) matrix representation. In this scheme, each ``document'' (each Wikipedia comment in our application) is represented as a vector of word frequencies-- i.e., the number of times each word in the total corpus occurs in the document. These frequencies are also inversely weighted by the frequency of the word over all documents; thus, a word appearing in a large number of documents is given less weight. The resulting TFIDF matrix serves as a design matrix that can then be passed to a classification algorithm \cite{sparck1972statistical}.
+
+The TFIDF approach has proved successful in some text classification tasks \cite{tong2001support} but also comes with serious drawbacks. First, the TFIDF matrix forgets all information in the ordering of words-- or even which words tend to occur near one another. Methods such as TFIDF are therefore termed ``bag-of-words'' approaches \cite{joulin2016bag, sebastiani2002machine}. This defficiency of a bag-of-words approach can be alleviated by augmenting the the set of `terms with higher order $n$-grams-- groups of $n$ words that occur together in documents. While this provides more features that account for some topological information, it also means an exponential blow-up of the dimension of feature space.
+
+In recent years, deep learning has emerged as a popular paradigm for tackling large NLP problems \cite{young2017recent}. Deep learning has delivered state-of-the-art results in many computer vision and pattern recognition tasks-- and is now doing the same in NLP as well. The key to the success of deep learning is that it enables automated multilevel feature representation learning; this stands in stark contrast to shallow methods where features often have to be engineered by hand.
+
+The success of deep learning in NLP relies on its use of dense word representations-- as opposed to sparse representations as in bag-of-words methods. Dense word representations are realized as ``word embeddings''. The idea is to embed every word in the corpus into a vector space whose dimension is much smaller than the size of the corpus. The embedding is learned such that words that appear in similar contexts (i.e., are surrounded by similar groups of words) are mapped to similar embeddings \cite{mikolov2013distributed}. Such a dense representation captures semantic meaning not accounted for with bag-of-words approaches.
+
+Word embeddings on large corpi are often time-consuming to learn. An alternative approach is to use pretrained word embeddings; rather than learning word embeddings for a corpus from scratch, the idea is to take the embedding already learned on a different corpus and apply it to the given corpus at hand. This method is much faster and has been shown to yield good results \cite{labutov2013re}. One issue with this approach is if the corpus for which we desire word embeddings contains words that were not in the corpus on which the embedding was trained. These ``out-of-vocabulary'' words would then have to be handled separately. An interesting solution to this problem is to train embeddings on ``subwords''-- some unit smaller than single words. This approach would then allow an out-of-vocabulary word to be embedded as long as it consists of subword units for which pretrained embeddings exist. This is particularly useful for handling typographical errors \cite{bojanowski2016enriching}.
+
+Word embeddings can be passed to varius deep learning architectures depending on the NLP task at hand. Convolutional neural networks (CNNs) have been enormously successful on computer vision tasks. More recently, they have also proved powerful for text classification \cite{collobert2008unified, collobert2011natural}. CNNs are built to detect features that are invariant under local transformations on some specified scale. This is often well-suited for text input as a given feature can occur at any position in the text. Put differently, CNNs take advantage of the order topology of text-- an ability lacking in shallow bag-of-words approaches.
+
+Finally, the Toxic comment classification challenge is a multilabel problem; i.e., the task is in reality six binary classification problems-- one for each of the six types of toxicity. Methods in multitask learning can take advantage of correlations between such multiple tasks to boost model performance on each individual task. For example, a CNN with multiple independent binary outputs can be understood as multiple distinct CNNs that ``share'' hidden layers; this architecture has been shown to improve performance on multitask problems \cite{collobert2008unified}.
+
+
+\section{Methods}
+
+Here we give more details on the various methods we applied to the toxic comment classification problem.
+
+We were given a training set comprising 159571 comments. Our goal was to build a classifier with maximum performance on a test set of 153164 comments. We first preprocessed all text data (described in more detail in the subsequent subsections). We split the training set into a training and validation set (50/50 split) and trained either a support vector machine (SVM) or CNN on the training set. We monitored performance on the validation set to gauge generalization power. Once satisfactory performance on the validation was achieved, we applied the trained classifier on the test set. The key metric that we monitored was the area under the receiver operating characteristic (ROC AUC) score as this was the metric that Kaggle used on its leaderboards.
+
+In the following subsections, we give further details on how we preprocessed the data and the various classification algorithms we tested.
+
+\subsection{Preprocessing}
+
+We tokenized the documents by splitting each one at non-alphanumeric characters. Thus, all punctuation was ignored. The resulting vocabulary size was 210,337. It is useful to compress the vocabulary to only the most important words. To this end, we calculated the frequency of every word in the corpus and sorted the vocabulary in order of descending frequency. We then aimed to answer the following question: How many of the top most frequent words are needed to obtain a sufficient coverage of the corpus? We found that the top 20,000 most frequent words (about 10\% of the vocabulary) accounts for about 96\% of the corpus (Figure \ref{fig-freqs}). We therefore took 20,000 as a sufficient vocabulary size.
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{Plots/tf.png}
+\caption{\label{fig-freqs} Percentage of corpus accounted for by the top most frequent words. The top 20,000 most frequent words account for about $96\%$ of the corpus.}
+\end{figure}
+
+In addition, it can be useful to discard words that appear in very few documents. We were therefore interested in finding an appropriate minimum document frequency cutoff. We calculated the document frequency of every word in the non-reduced vocabulary and found that about 10\% of the vocabulary appears in 11 documents or more (Figure \ref{fig-df}). We therefore believe that a minimum document frequency cutoff of 11 is an appropriate preprocessing constraint.
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{Plots/df.png}
+\caption{\label{fig-df} Percentage of words appearing in at least $x$ documents. Only $10\%$ of the vocabulary appears in 11 documents or more.}
+\end{figure}
+
+It should be noted that not all of the insights gained during preprocessing have yet been incorporated into our methods. Instead, findings such as an appropriate minimum document frequency cutoff were used only as a rough guide for our implementations. We plan to incorporate the above results more precisely in future work.
+
+\subsection{Support Vector Machine}
+
+This method is a shallow bag-of-words technique that served as a baseline against which we could compare more advanced approaches.
+
+We vectorized the collection of documents as a sparse TFIDF matrix. We included both unigrams and bigrams to incorporate some order structure. We limited the number of features to 200,000 and set the minimum document frequency to 5. These values were chosen based on intuition based roughly on the numbers obtained during preprocessing.
+
+We regarded the resulting TFIDF matrix as a design matrix that we could pass to an SVM classifier. We used the SVM provided by SciKitLearn. SciKitLearn offers an SVM implementation that performs multitask classification; it is equivalent to but more efficient than implementing a separate SVM for each of the six classification tasks (since all six classifiers work with the same underlying kernel matrix).
+
+\subsection{Convolutional Neural Network with Embedding Layer}
+
+We implemented a CNN in Keras. We restricted the vocabulary to the top 10,000 most frequent words and padded all documents to the maximum length of 220. We did not train word embeddings using word2vec due to time constraints. Instead, we took the common approach of including an embedding layer as the first layer in the CNN architecture. This layer implements the embedding of words, and the layer is trained in conjunction with the rest of the architecture. The complete layer-by-layer architecture of our CNN is as follows:
+\begin{enumerate}
+\item Embedding layer into 300 dimensions.
+\item Three 1D convolutional layers in parallel with 128 filters of sizes 3, 4, and 5 respectively. Each layer is followed by relu activation.
+\item Global max pooling applied to each of the three convolutional layers.
+\item Dropout with rate $p=0.5$ following concatenation of the three max pooling layers.
+\item Dense layer with relu activation.
+\item Dropout layer with rate $p=0.5$.
+\item Six dense binary classification layers in parallel with sigmoid activation.
+\end{enumerate}
+This CNN performs multitask learning as it comprises six binary classifiers-- one for each of the six tasks. Each task is able to benefit from the other tasks since the six classifiers share all internal layers of the network.
+
+\subsection{Convolutional Neural Network with Pretrained Embedding}
+
+We tried this approach after reviewing the results for the first two approaches described above. In the last two approaches, we split each document into words composed of all alphanumeric characters; i.e., we removed all punctuation. But in this approach, we left most of the punctuation in to help provide context; we only removed certain characters such as newlines and vertical bars.
+
+In this approach, we used pretrained word embeddings in place of training an embedding layer. There were various libraries of embeddings to choose from. We settled on the fastText library from FacebookResearch as its embeddings were trained on subwords and are therefore more robust to out-of-vocabulary words and typographical errors \cite{fasttext}. We specifically chose the fastText embeddings that were trained on Wikipedia's encyclopedia pages.
+
+We performed additional preprocessing to ensure that these pretrained embeddings would perform optimally. For example, we found that the word embeddings did not recognize digits but instead their alphabetic analogs; we therefore preprocessed all numeric digits in our text data to alphabetic words (e.g., ``8'' into ``eight'') so that they would be recognized by fastText. We did not compress the vocabulary like we did in the first two approaches; this is because we understood a word to be rare only if it was not contained in the corpus on which the embeddings were pretrained. We therefore discarded any out-of-vocabulary words. We padded all documents to a length of 200. We passed all data through the fastText embedding and passed the resulting set as input to our CNN. We used the same CNN architecture as before but without the embedding layer.
+
+
+\section{Results}
+
+We applied our SVM and CNN models on the data with cross validation using a 50/50 training-validation split. We trained the CNN with and without an embedding layer (using pretrained fastText embeddings in the latter case). We applied the trained models on the test set and submitted the results to Kaggle. We also trained the CNN with fastText on the entire training data (i.e., no cross validation) to see how it does on the test set; we did this to allow for an accurate comparison between our test scores and those of others.
+
+We gathered all ROC AUC scores for comparison (Table \ref{table-scores}). The SVM exhibits poor generalization to the validation and test sets. the CNN models do significantly better. Pretrained embeddings with fastText also do significantly better than embeddings learned as the first layer of a CNN. Finally, training the CNN with fastText on the entire training data boosts performance on the test set; our highest ROC AUC sscore on the private leaderboard is $98.09\%$.
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+\quad & Training & Validation & Public Test & Private Test \\ \hline
+SVM & 0.97988 & 0.71015 & 0.7301 & 0.7191 \\
+CNN & 0.97528 & 0.96808 & 0.9533 & 0.9552 \\
+FTCNN & 0.9956 & 0.98512 & 0.9779 & 0.9787 \\ \hline
+FTCNN (no val set) & 0.99605 & 0.98991 & 0.9817 & 0.9809 \\
+\hline
+\end{tabular}
+\caption{\label{table-scores} ROC AUC scores for four models. Here CNN and FTCNN refer to the architectures with and without an embedding layer respectively (the latter used pretrained fastText embeddings). The first three rows were trained with 550/50 training-validation split. Cross validation was not done for the last model.}
+\end{table}
+
+All subsequent results are for the CNN trained with fastText embeddings (FTCNN). Our analysis of the FTCNN trained on all the data is limited because we did not have access to the true labels on the test set. In contrast, for the FTCNN trained with cross validation, we did have knowledge of the correct labels on the validation set. We therefore proceed to analyze the FTCNN trained with cross validation.
+
+We broke down the performance of the FTCNN by type of toxicity (Figure \ref{fig-bar}). Breakdown of the test scores by type was not available as kaggle does not provide them. The CNN performed best on the ``severely toxic'' and ``obscene'' tasks and the worst on the ``toxic'' task.
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{Plots/bar.png}
+\caption{\label{fig-bar} ROC AUC score of the CNN trained with fastText on training and validation sets for each of the six types of toxicity.}
+\end{figure}
+
+We speculated on the reason for the variability in performance over tasks. We wondered if the available sample size of comments of each type of toxicity had any correlation to performance. We therefore calculated the percentage of comments exhibiting each type of toxicity. We present these for the training set (Figure \ref{fig-imbalance}). We see that toxic comments make up less than $10\%$ of the data. Threatening comments make up only about $0.3\%$ of the data. Clearly, the type of toxicity with the greatest percentage is ``toxic'' as it serves as an umbrella for the other five types. We could not confirm if the weak performance on the ``toxic'' task was related to its greatest presence out of the six tasks. But we do see that the rarest types of toxicity -- ``threat'' and ``identity hate'' are not the ones on which we attained greatest performance. So there is no obvious correlation between performance and sample size for each task.
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{Plots/imbalance.png}
+\caption{\label{fig-imbalance} Percentage of comments in training data exhibiting each of the six types of toxicity.}
+\end{figure}
+
+We used the FTCNN to do multitask learning on six tasks. Multitask learning is useful when the tasks are correlated. We therefore calculated the correlations between every pair of labels on the training set. We also did the same on the test set to gauge the extent to which the FTCNN correlated the six tasks on unseen data (Table \ref{table-corr}). Correlations on the test set vary roughly with correlations on the training set. Thus, the FTCNN has learned to an extent ``overlaps'' between tasks. Most correlations are weak, and weak correlations on the training set and correspondingly much weaker on the test set. We would expect all of the tasks to be strong predictors of toxicity, but this is not symmetric; the presence of toxicity suggests the presence of at least one but possibly only one other type of toxicity. Interesting though, moderate correlation (above $0.5$) as is observed among the ``toxic'', ``obscene'', and ``insult'' tasks. This suggests that ``obscene'' and ``insult'' are good predictors for ``toxic'', and this in turn suggests that most toxic comments are obscene insults.
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|} \hline
+Task 1 & Task 2 & Corr. on Train. & Corr. on Test. \\ \hline
+toxic & severe\_toxic & 0.30862 & 0.16146 \\
+toxic & obscene & 0.67651 & 0.71734 \\
+toxic & threat & 0.15706 & 0.03768 \\
+toxic & insult & 0.64752 & 0.64572 \\
+toxic & identity\_hate & 0.26601 & 0.16521 \\
+severe\_toxic & obscene & 0.40301 & 0.22484 \\
+severe\_toxic & threat & 0.1236 & 0.00224 \\
+severe\_toxic & insult & 0.37581 & 0.25005 \\
+severe\_toxic, identity\_hate & 0.2016 & 0.06824 \\
+obscene & threat & 0.14118 & 0.01251 \\
+obscene & insult & 0.74127 & 0.75453 \\
+obscene & identity\_hate & 0.28687 & 0.16625 \\
+threat & insult & 0.15002 & 0.02257 \\
+threat & identity\_hate & 0.11513 & -0.00172 \\
+insult & identity\_hate & 0.33774 & 0.23318 \\
+\hline
+\end{tabular}
+\caption{\label{table-corr} Correlations between every pair of task labels on the training and test sets.}
+\end{table}
+
+
+\section{Discussion}
+
+Toxic comments can be detrimental to healthy and productive online conversation and discussion. The research and development of machine learning models for the automated classification of toxic comments are therefore vital for the sustenance of many online communities. Our strong results support the possibility that toxic comment classification can be successfully automated to a large extent.
+
+We found in our results that a CNN significantly outperforms an SVM for toxic comment classification. Our results therefore constitute another example of the success of deep learning over shallow methods for natural language processing.
+
+But despite our positive results, our highest ROC AUC score on the Kaggle private leaderboard ($98.09\%$) failed to beat or even meet the highest score so far ($98.85\%$). We would like to gain some intuition about the subset of comments on which our model performs poorly. To this end, for each of the six types of toxicity, we collected all comments from the training data that were incorrectly predicted to exhibit that type of toxicity by our model. Of these, we manually examined the comments with the highest prediction error. Our findings are anecdotal as we do not have formal statistics on any of our observations. But we still think it is worthwhile to share some of our anecdotal observations about misclassified comments; we are particularly interested in finding features in comments that give some insight into why they were misclassified (Note that we list very few examples of comments as we found most comments to be too ``toxic'' to present here):
+\begin{itemize}
+\item We observed comments that quote toxicity from others. Such comments were not labeled as toxic, but it is understandable how our model would misclassify it as such.
+\item Certain words seem to be highly correlated with toxicity. Comments can be misclassified when these words are taken out of context. For example:
+\begin{quote}
+:Don't mean to be an ass about it, but really, please can we discuss it first?
+\end{quote}
+Our CNN classified this very non-toxic comment as toxic. We suspect it is due to the presence of the word ``ass''.
+\item Comments can be misclassified based on entire phrases. For example,
+\begin{quote}
+potatoes will kill you!!!!!!! watch out!!!!!!!!!!!!
+\end{quote}
+This comment was misclassified as threatening. It is not clear if this comment is a joke, health advice, etc. Out of context, ``will kill you'' and ``watch out'' sound threatening. But ``potatoes'' changes the entire meaning of the comment.
+\item Some comments are indeed toxic. But since the six types of toxicity tend to overlap, it is possible for a model to misclassify a comment as having one type of toxicity when it in fact has only another type of toxicity. For example,
+\begin{quote}
+lo\$er 
+\
+no one likes you, go kill yourself
+\end{quote}
+This comment was misclassified as a threat. The comment is clearly toxic and in particular insulting. Moreover, ``kill yourself'' can sound threatening. But in fact, no actual threat is being made.
+\item Finally, we observed examples where the toxicity of comments is directed reflexively at the writers themselves. Such comments were not labeled as toxic but were predicted as such.
+\end{itemize}
+We therefore believe that further improvement to our model necessitates focus on ``tricky'' comments such as the ones described above.
+
+In addition, we observed example comments that appeared very toxic to us for a given type such as ``identity hate'' but were not labeled as such. We therefore suspect that there are mislabelings in the data. But the fact that our model misclassified these mislabled examples illustrates the robustness of our model. Nevertheless, mislabeled data means that there may be an upper bound strictly less than $100\%$ on the classification accuracy achievable on the given data.
+
+
+\section{Future Work}
+
+We plan to gather formal statistics on ``tricky'' comments that mislead or outright fool our CNN model. We hope to incorporate any insights we gain into our model. We also plan to experiment with recurrent neural networks to possibly boost performance; we of course know that our ROC AUC score is not the highest achievable, and thus there is room for improvement.
+
+
+% Bibliography
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
